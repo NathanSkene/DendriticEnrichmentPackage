@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1553292868906.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "DBC677F8",
+    "lastKnownWriteTime" : 1553292875,
+    "last_content_update" : 1553292875130,
+    "path" : "~/Box Sync/DendriticEnrichmentPackage/R/compare_datasets.r",
+    "project_path" : "R/compare_datasets.r",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

@@ -1,0 +1,11 @@
+Package: DendriticEnrichmentPackage
+Title: What the Package Does (one line, title case)
+Version: 0.0.0.9000
+Author: Dr Nathan Skene
+Maintainer: Nathan Skene <nathan.skene@gmail.com>
+Description: Quality metric for single cell/nuclei datasets. Tests for differences in specificity of neuronal transcripts. Better datasets have more specific neuronal expression.
+Depends: R (>= 3.5.1)
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1

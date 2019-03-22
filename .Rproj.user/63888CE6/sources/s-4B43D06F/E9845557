@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1553293501292.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "E9845557",
+    "lastKnownWriteTime" : 1553293609,
+    "last_content_update" : 1553293609201,
+    "path" : "~/Box Sync/DendriticEnrichmentPackage/R/generate_publication_plot_for_single_list.r",
+    "project_path" : "R/generate_publication_plot_for_single_list.r",
+    "properties" : {
+        "cursorPosition" : "9,82",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

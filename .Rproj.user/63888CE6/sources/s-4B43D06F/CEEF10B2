@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1553274058302.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CEEF10B2",
+    "lastKnownWriteTime" : 1553274592,
+    "last_content_update" : 1553274592053,
+    "path" : "~/Box Sync/DendriticEnrichmentPackage/R/prepare_specificity_comparison_across_datasets.r",
+    "project_path" : "R/prepare_specificity_comparison_across_datasets.r",
+    "properties" : {
+        "cursorPosition" : "21,46",
+        "scrollLine" : "6"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

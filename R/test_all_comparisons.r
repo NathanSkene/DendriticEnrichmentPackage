@@ -17,6 +17,7 @@ test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neu
     if(listN=="dendrite_enriched_transcripts_HGNC_1to1only"){
         listName="dendrite_enriched_transcripts_HGNC_1to1only"
         data("dendriticGenesHGNC")
+        geneListHGNC=dendriticGenesHGNC
     }else{
         if(is.na(path)){stop("path cannot be NA if genes need to be loaded from a text file")}
         list_path = sprintf("%s/%s.txt",path,listN)
@@ -32,7 +33,7 @@ test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neu
     for(cc in 1:length(comparisons$labels)){
         dd1 = allDataSets[[comparisons$indexed[1,cc]]]
         dd2 = allDataSets[[comparisons$indexed[2,cc]]]
-        a = compare_datasets(dataset1=dd1,dataset2=dd2, geneListHGNC=dendriticGenesHGNC,orthologs=orthologs,sharedName=sharedName,pSides=pSides,reps=reps)
+        a = compare_datasets(dataset1=dd1,dataset2=dd2, geneListHGNC=geneListHGNC,orthologs=orthologs,sharedName=sharedName,pSides=pSides,reps=reps)
         comparisons$z[cc] = a$values$z
         comparisons$p[cc] = a$values$p
     }

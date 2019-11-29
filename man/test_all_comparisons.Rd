@@ -7,7 +7,7 @@
 test_all_comparisons(allDataSets, orthologs,
   sharedName = "Pyramidal Neuron",
   listN = "dendrite_enriched_transcripts_HGNC_1to1only", path = NA,
-  pSides = "onesided")
+  pSides = "onesided", reps = 10000)
 }
 \arguments{
 \item{allDataSets}{Created using prepare_specificity_comparison_across_datasets}
@@ -17,6 +17,8 @@ test_all_comparisons(allDataSets, orthologs,
 \item{sharedName}{The cell type being compared across datasets}
 
 \item{listN}{Name of the text file with the data to be loaded}
+
+\item{reps}{Number of bootstrap replicates to use}
 }
 \value{
 res Results

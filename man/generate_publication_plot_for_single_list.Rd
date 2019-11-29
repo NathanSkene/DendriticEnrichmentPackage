@@ -5,12 +5,17 @@
 \title{generate_publication_plot_for_single_list}
 \usage{
 generate_publication_plot_for_single_list(allRes,
-  listName = "dendrite_enriched_transcripts_HGNC_1to1only")
+  listName = "dendrite_enriched_transcripts_HGNC_1to1only",
+  save_folder = "", xaxis_angle = 90)
 }
 \arguments{
 \item{allRes}{Output of test_all_comparisons}
 
 \item{listName}{Used to select a particular list from listName (not relevant to current version of package)}
+
+\item{save_folder}{Folder where output PDFs should be stored}
+
+\item{angle}{for xaxis labels, either 90 or 45 is probably best}
 }
 \value{
 thePlot (as a ggplot)

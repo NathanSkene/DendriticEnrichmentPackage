@@ -4,7 +4,7 @@
 \alias{compare_datasets}
 \title{compare.datasets}
 \usage{
-compare_datasets(dataset1, dataset2, reps = 1000, geneListHGNC = NULL,
+compare_datasets(dataset1, dataset2, reps = 10000, geneListHGNC = NULL,
   geneListMGI = NULL, orthologs, sharedName, pSides = "onesided")
 }
 \arguments{

@@ -4,13 +4,14 @@
 #'
 #' @param allRes Output of test_all_comparisons
 #' @param listName Used to select a particular list from listName (not relevant to current version of package)
+#' @param save_folder Folder where output PDFs should be stored
 #' @return thePlot (as a ggplot)
 #' @examples
 #' allDataSets = list(mouseSS_dist,tasic_mouse_dist,dronc_mouse_dist,dronc_human_dist,divseq_dist)
 #' res = test_all_comparisons(allDataSets,orthologs,sharedName="Pyramidal Neuron")
 #' thePlot = generate_publication_plot_for_single_list(res)
 #' @export
-generate_publication_plot_for_single_list <- function(allRes,listName="dendrite_enriched_transcripts_HGNC_1to1only"){
+generate_publication_plot_for_single_list <- function(allRes,listName="dendrite_enriched_transcripts_HGNC_1to1only",save_folder=""){
     #load("~/Box Sync/DendriticEnrichment/allRes_LotsOfListsWtP.Rda")
     subRes = allRes[allRes$list == listName,]
     subRes$q = p.adjust(subRes$p,method="BH")
@@ -27,14 +28,14 @@ generate_publication_plot_for_single_list <- function(allRes,listName="dendrite_
         scale_y_continuous(breaks=seq(-20,20,1)) + guides(fill=FALSE)
     for(widths in seq(from=3,to=12,by=3)){
         for(height in seq(from=3,to=9,by=3)){
-            pdf(sprintf("Fig_DendriticEnrichment_%s_%s_w%s_h%s.pdf",listName,Sys.Date(),widths,height),width=widths,height=height)
+            pdf(sprintf("%s/Fig_DendriticEnrichment_%s_%s_w%s_h%s.pdf",save_folder,listName,Sys.Date(),widths,height),width=widths,height=height)
             print(thePlot)
             dev.off()
         }
     }
     widths=10
     height=5
-    pdf(sprintf("Fig_DendriticEnrichment_%s_%s_w%s_h%s.pdf",listName,Sys.Date(),widths,height),width=widths,height=height)
+    pdf(sprintf("%s/Fig_DendriticEnrichment_%s_%s_w%s_h%s.pdf",save_folder,listName,Sys.Date(),widths,height),width=widths,height=height)
     print(thePlot)
     dev.off()
     return(thePlot)

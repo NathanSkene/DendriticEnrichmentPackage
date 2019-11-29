@@ -22,7 +22,7 @@
 #' @import dplyr
 #' @import stats
 #compare.datasets <- function(dataset1,species1,col1,dataset1$datasetName,dataset2,species2,col2,dataset2$datasetName,reps=1000,geneListHGNC=NULL,geneListMGI=NULL,orthologs){
-compare_datasets <- function(dataset1,dataset2,reps=1000,geneListHGNC=NULL,geneListMGI=NULL,orthologs,sharedName,pSides="onesided"){
+compare_datasets <- function(dataset1,dataset2,reps=10000,geneListHGNC=NULL,geneListMGI=NULL,orthologs,sharedName,pSides="onesided"){
     # Argument check
     if(!pSides %in% c("onesided","twosided")){stop("p must be either 'onesided' or 'twosided'.")}
     

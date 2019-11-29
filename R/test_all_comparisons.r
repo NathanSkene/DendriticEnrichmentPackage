@@ -6,12 +6,13 @@
 #' @param orthologs Dataframe containing HGNC.symbol and MGI.symbol as columns
 #' @param sharedName The cell type being compared across datasets
 #' @param listN Name of the text file with the data to be loaded
+#' @param reps Number of bootstrap replicates to use
 #' @return res Results
 #' @examples
 #' allDataSets = list(mouseSS_dist,tasic_mouse_dist,dronc_mouse_dist,dronc_human_dist,divseq_dist)
 #' res = test_all_comparisons(allDataSets,orthologs,sharedName="Pyramidal Neuron")
 #' @export
-test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neuron",listN="dendrite_enriched_transcripts_HGNC_1to1only",path=NA,pSides="onesided"){
+test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neuron",listN="dendrite_enriched_transcripts_HGNC_1to1only",path=NA,pSides="onesided",reps=10000){
     # Load the gene list
     if(listN=="dendrite_enriched_transcripts_HGNC_1to1only"){
         listName="dendrite_enriched_transcripts_HGNC_1to1only"
@@ -31,7 +32,7 @@ test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neu
     for(cc in 1:length(comparisons$labels)){
         dd1 = allDataSets[[comparisons$indexed[1,cc]]]
         dd2 = allDataSets[[comparisons$indexed[2,cc]]]
-        a = compare_datasets(dataset1=dd1,dataset2=dd2, geneListHGNC=dendriticGenesHGNC,orthologs=orthologs,sharedName=sharedName,pSides=pSides)
+        a = compare_datasets(dataset1=dd1,dataset2=dd2, geneListHGNC=dendriticGenesHGNC,orthologs=orthologs,sharedName=sharedName,pSides=pSides,reps=reps)
         comparisons$z[cc] = a$values$z
         comparisons$p[cc] = a$values$p
     }

@@ -124,7 +124,7 @@ compare_datasets <- function(dataset1,dataset2,reps=1000,geneListHGNC=NULL,geneL
     boot_mean = mean(boot_data$specificity)
     boot_sd = sd(boot_data$specificity)
     boot_z  = (diff-boot_mean)/boot_sd
-    if(pSided=="onesided"){
+    if(pSides=="onesided"){
         p=sum(diff<diffs)/length(diffs)
     }else{
         p=sum(diff<abs(diffs))/length(diffs)

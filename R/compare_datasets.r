@@ -13,6 +13,7 @@
 #' @param reps Number of replacates to sample
 #' @param geneListHGNC Gene list (HGNC symbols) to test the specificity of between the two datasets
 #' @param orthologs Data table with MGI.symbol and HGNC.symbol columns. Should only contain 1:1 homologs
+#' @param pSides Either 'onesided' or 'twosided' depending on whether you only care about enrichment in celltypes, or depletion as well
 #' @return p Probility (based on bootstrapping) that there is a difference in the specificity of the gene list between the two datasets
 #' @return z Z-score for the difference in the specificity of the gene list between the two datasets
 #' @examples
@@ -21,7 +22,10 @@
 #' @import dplyr
 #' @import stats
 #compare.datasets <- function(dataset1,species1,col1,dataset1$datasetName,dataset2,species2,col2,dataset2$datasetName,reps=1000,geneListHGNC=NULL,geneListMGI=NULL,orthologs){
-compare_datasets <- function(dataset1,dataset2,reps=1000,geneListHGNC=NULL,geneListMGI=NULL,orthologs,sharedName){
+compare_datasets <- function(dataset1,dataset2,reps=1000,geneListHGNC=NULL,geneListMGI=NULL,orthologs,sharedName,pSides="onesided"){
+    # Argument check
+    if(!pSides %in% c("onesided","twosided")){stop("p must be either 'onesided' or 'twosided'.")}
+    
     # Check the orthologs table
     check_1to1_orthologs(orthologs)
     
@@ -120,7 +124,11 @@ compare_datasets <- function(dataset1,dataset2,reps=1000,geneListHGNC=NULL,geneL
     boot_mean = mean(boot_data$specificity)
     boot_sd = sd(boot_data$specificity)
     boot_z  = (diff-boot_mean)/boot_sd
-    p=sum(diff<diffs)/length(diffs)
+    if(pSided=="onesided"){
+        p=sum(diff<diffs)/length(diffs)
+    }else{
+        p=sum(diff<abs(diffs))/length(diffs)
+    }
     
     # Comparison name
     if(nchar(as.character(dataset1$datasetName))>6 | nchar(as.character(dataset2$datasetName))>6){

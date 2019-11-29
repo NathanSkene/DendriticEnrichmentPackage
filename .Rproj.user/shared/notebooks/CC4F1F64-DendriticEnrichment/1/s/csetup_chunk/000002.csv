@@ -1,6 +1,0 @@
-"0","knitr::opts_chunk$set(echo = TRUE)"
-"0","library(dplyr)"
-"0","library(ggplot2)"
-"0","library(cowplot)"
-"0","R.utils::sourceDirectory(""R"")"
-"0","load(""Data/pats_orthologs.rda"")"

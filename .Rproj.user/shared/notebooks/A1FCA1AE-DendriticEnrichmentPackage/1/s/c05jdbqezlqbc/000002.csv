@@ -1,5 +1,0 @@
-"0","thePlot = generate_publication_plot_for_single_list(res)
-"
-"2","Error in generate_publication_plot_for_single_list(res) : 
-  could not find function ""generate_publication_plot_for_single_list""
-"

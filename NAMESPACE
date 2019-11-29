@@ -3,6 +3,7 @@
 export(check_1to1_orthologs)
 export(compare_datasets)
 export(generate_publication_plot_for_single_list)
+export(load_genelist)
 export(prepare_specificity_comparison_across_datasets)
 export(test_all_comparisons)
 import(dplyr)

@@ -19,7 +19,7 @@ test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neu
     }else{
         if(is.na(path)){stop("path cannot be NA if genes need to be loaded from a text file")}
         list_path = sprintf("%s/%s.txt",path,listN)
-        geneListHGNC = load.genelist(list_path,orthologs,speciesWanted="human")
+        geneListHGNC = load_genelist(list_path,orthologs,speciesWanted="human")
     }
     
     # Find all possible comparisons

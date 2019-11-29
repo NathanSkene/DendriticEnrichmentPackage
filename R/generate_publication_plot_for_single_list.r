@@ -33,10 +33,10 @@ generate_publication_plot_for_single_list <- function(allRes,listName="dendrite_
         #facet_grid(.~groupLabels, scales = "free", space = "free", switch="x")+
         theme_cowplot()+
         facet_grid(list~groupLabels, scales = "free", space = "free", switch="x")+
-        theme(axis.text.x = element_text(angle = 90, hjust = 1))+
         ylab("Z-Score")+xlab("")+
         scale_fill_manual(values=group.colors)+
-        scale_y_continuous(breaks=seq(-20,20,1)) + guides(fill=FALSE)
+        scale_y_continuous(breaks=seq(-20,20,1)) + guides(fill=FALSE)+
+        theme(axis.text.x = element_text(angle = xaxis_angle, hjust = 1))
     #if(length(unique(allRes$list))>1){
     #    thePlot = thePlot + facet_wrap(~list,ncol=1)
     #}

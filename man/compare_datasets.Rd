@@ -5,7 +5,7 @@
 \title{compare.datasets}
 \usage{
 compare_datasets(dataset1, dataset2, reps = 1000, geneListHGNC = NULL,
-  geneListMGI = NULL, orthologs, sharedName)
+  geneListMGI = NULL, orthologs, sharedName, pSides = "onesided")
 }
 \arguments{
 \item{dataset1}{Cell type data, loaded by prepare.specificity.comparison.across.datasets()}
@@ -19,6 +19,8 @@ compare_datasets(dataset1, dataset2, reps = 1000, geneListHGNC = NULL,
 \item{orthologs}{Data table with MGI.symbol and HGNC.symbol columns. Should only contain 1:1 homologs}
 
 \item{sharedName}{A celltype name that is in both ctd specificity files}
+
+\item{pSides}{Either 'onesided' or 'twosided' depending on whether you only care about enrichment in celltypes, or depletion as well}
 
 \item{dataset1$datasetName}{The 'title' of the dataset to be used in figures}
 

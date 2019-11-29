@@ -5,7 +5,8 @@
 \title{test_all_comparisons}
 \usage{
 test_all_comparisons(allDataSets, orthologs,
-  sharedName = "Pyramidal Neuron")
+  sharedName = "Pyramidal Neuron",
+  listN = "dendrite_enriched_transcripts_HGNC_1to1only", path = NA)
 }
 \arguments{
 \item{allDataSets}{Created using prepare_specificity_comparison_across_datasets}
@@ -13,6 +14,8 @@ test_all_comparisons(allDataSets, orthologs,
 \item{orthologs}{Dataframe containing HGNC.symbol and MGI.symbol as columns}
 
 \item{sharedName}{The cell type being compared across datasets}
+
+\item{listN}{Name of the text file with the data to be loaded}
 }
 \value{
 res Results

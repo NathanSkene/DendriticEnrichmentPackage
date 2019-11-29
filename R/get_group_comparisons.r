@@ -1,3 +1,12 @@
+#' get_group_comparisons
+#'
+#' \code{get_group_comparisons} Internal function
+#' 
+#' @param datasets Set of datasets
+#' @return comparisons 
+#' @examples
+#' # 1==1
+#' @export
 get_group_comparisons <- function(datasets){
     # Find which group each dataset was assigned to
     groupTypes = rep("",length(datasets))

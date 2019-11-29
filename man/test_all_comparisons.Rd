@@ -6,7 +6,8 @@
 \usage{
 test_all_comparisons(allDataSets, orthologs,
   sharedName = "Pyramidal Neuron",
-  listN = "dendrite_enriched_transcripts_HGNC_1to1only", path = NA)
+  listN = "dendrite_enriched_transcripts_HGNC_1to1only", path = NA,
+  pSides = "onesided")
 }
 \arguments{
 \item{allDataSets}{Created using prepare_specificity_comparison_across_datasets}

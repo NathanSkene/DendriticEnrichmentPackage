@@ -4,10 +4,10 @@
 \alias{load_genelist}
 \title{load_genelist}
 \usage{
-load_genelist(path, lookuptable, speciesWanted = "human")
+load_genelist(list_path, lookuptable, speciesWanted = "human")
 }
 \arguments{
-\item{path}{Folder where it is stored}
+\item{list_path}{Folder where it is stored}
 
 \item{lookuptable}{Dataframe containing HGNC.symbol and MGI.symbol as columns}
 

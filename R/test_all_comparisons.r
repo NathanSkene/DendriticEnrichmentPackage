@@ -5,17 +5,22 @@
 #' @param allDataSets Created using prepare_specificity_comparison_across_datasets
 #' @param orthologs Dataframe containing HGNC.symbol and MGI.symbol as columns
 #' @param sharedName The cell type being compared across datasets
+#' @param listN Name of the text file with the data to be loaded
 #' @return res Results
 #' @examples
 #' allDataSets = list(mouseSS_dist,tasic_mouse_dist,dronc_mouse_dist,dronc_human_dist,divseq_dist)
 #' res = test_all_comparisons(allDataSets,orthologs,sharedName="Pyramidal Neuron")
 #' @export
-test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neuron"){
+test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neuron",listN="dendrite_enriched_transcripts_HGNC_1to1only",path=NA){
     # Load the gene list
-    #list_path = sprintf("%s/%s.txt",path,listN)
-    #geneListHGNC = load.genelist(list_path,orthologs,speciesWanted="human")
-    listName="dendrite_enriched_transcripts_HGNC_1to1only"
-    data("dendriticGenesHGNC")
+    if(listN=="dendrite_enriched_transcripts_HGNC_1to1only"){
+        listName="dendrite_enriched_transcripts_HGNC_1to1only"
+        data("dendriticGenesHGNC")
+    }else{
+        if(is.na(path)){stop("path cannot be NA if genes need to be loaded from a text file")}
+        list_path = sprintf("%s/%s.txt",path,listN)
+        geneListHGNC = load.genelist(list_path,orthologs,speciesWanted="human")
+    }
     
     # Find all possible comparisons
     comparisons = get_group_comparisons(allDataSets)
@@ -31,6 +36,6 @@ test_all_comparisons <- function(allDataSets,orthologs,sharedName="Pyramidal Neu
         comparisons$p[cc] = a$values$p
     }
     
-    res = data.frame(labels=comparisons$labels,groupLabels=comparisons$group_labels,z=comparisons$z,p=comparisons$p,list=listName)
+    res = data.frame(labels=comparisons$labels,groupLabels=comparisons$group_labels,z=comparisons$z,p=comparisons$p,list=listN)
     return(res)
 }
